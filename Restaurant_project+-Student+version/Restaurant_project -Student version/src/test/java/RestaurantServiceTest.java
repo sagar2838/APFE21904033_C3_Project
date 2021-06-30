@@ -11,11 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class RestaurantServiceTest {
 
     RestaurantService service = new RestaurantService();
-    Restaurant restaurant;
+    Restaurant restaurant ;
     //REFACTOR ALL THE REPEATED LINES OF CODE
     LocalTime openingTime = LocalTime.parse("10:30:00");
     LocalTime closingTime = LocalTime.parse("22:00:00");
     Restaurant add = service.addRestaurant("Sagar","Chennai",openingTime,closingTime);
+
 
 
     //>>>>>>>>>>>>>>>>>>>>>>SEARCHING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -36,6 +37,8 @@ class RestaurantServiceTest {
 
     }
     //<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
 
 
 
@@ -61,6 +64,8 @@ class RestaurantServiceTest {
         restaurant = service.addRestaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
+        System.out.println(restaurant.getMenu());
+
 
         assertThrows(restaurantNotFoundException.class,()->service.removeRestaurant("Pantry d'or"));
     }
